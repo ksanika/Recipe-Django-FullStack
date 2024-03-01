@@ -24,13 +24,22 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from home.views import home_func, success_page
 from vege.views import update_recipe, delete_recipe, recipes
 
+from vege.views import login_page
+
+from vege.views import register_page
+
+from vege.views import logout_page
+
 urlpatterns = [
-    path('', recipes, name="home"),
+    path('', login_page, name="home"),
     path('recipes',recipes, name="recipe"),
     path('success-page',success_page, name="success"),
     path('admin/', admin.site.urls),
     path('delete-recipe/<id>/', delete_recipe, name="delete_recipe"),
-    path('update-recipe/<id>/', update_recipe, name="update_recipe")
+    path('update-recipe/<id>/', update_recipe, name="update_recipe"),
+    path('login/', login_page, name='login_page'),
+    path('logout/', logout_page, name='login_page'),
+    path('register/', register_page, name='register_page')
 ]
 
 if settings.DEBUG:

@@ -7,6 +7,14 @@
     <title>Title</title>
 </head>
 <body>
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand">Recipes</a>
+  <form class="form-inline">
+    <a href="/logout/" class="btn btn-outline-success" type="submit">Logout</a>
+  </form>
+</nav>
+{{request.user}}
+{{request.user.first_name}}
 <div class="container mt-5">
     <form class="col-6 mx-auto card p-3 shadow-lg" method="post" enctype="multipart/form-data">
         {%csrf_token%}
