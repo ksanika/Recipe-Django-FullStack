@@ -16,14 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from home.views import *
-from vege.views import *
+
 from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
+from home.views import home_func, success_page
+from vege.views import update_recipe, delete_recipe, recipes
+
 urlpatterns = [
-    path('', home_func, name="home"),
+    path('', recipes, name="home"),
     path('recipes',recipes, name="recipe"),
     path('success-page',success_page, name="success"),
     path('admin/', admin.site.urls),
